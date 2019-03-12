@@ -26,7 +26,7 @@ const client = new MongoClient(url);
 		assert.equal(1, r.insertedCount);
 
 		// Get documents
-		const docs = await col.find().limit(1).toArray();
+		const docs = await col.find().toArray();
 		console.log(docs)
 
 	} catch (err) {
