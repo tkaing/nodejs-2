@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 
 // Connection URL + Database Name
-const url = 'mongodb://tkaing:T12345678@chat-bot-shard-00-00-k7ohr.mongodb.net:27017,chat-bot-shard-00-01-k7ohr.mongodb.net:27017,chat-bot-shard-00-02-k7ohr.mongodb.net:27017';
+const url = 'mongodb://tkaing:T12345678@chat-bot-shard-00-00-k7ohr.mongodb.net:27017,chat-bot-shard-00-01-k7ohr.mongodb.net:27017,chat-bot-shard-00-02-k7ohr.mongodb.net:27017/chat-bot?ssl=true&replicaSet=chat-bot-shard-0&authSource=admin&retryWrites=true';
 const dbName = 'chat-bot';
 
 // GET method route
