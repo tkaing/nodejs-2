@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 
 // Connection URL + Database Name
-const url = 'mongodb://localhost:27017';
+const url = process.env.MONGODB_URI;
 const dbName = 'chat-bot';
 
 // GET method route
