@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 
 // Connection URL + Database Name
-const url = process.env.MONGODB_URI;
+const url = 'mongodb+srv://tkaing:#12345678@chat-bot-k7ohr.mongodb.net/test?retryWrites=true';
 const dbName = 'chat-bot';
 
 // GET method route
@@ -82,7 +82,7 @@ app.listen(port, function () {
 // Find all messages
 async function findAll() {
 	// Connect to db + Get collection
-	const client = new MongoClient(url);
+	const client = new MongoClient(url, { useNewUrlParser: true });
 	await client.connect();
 	const db = client.db(dbName);
 	const col = db.collection('messages');
@@ -98,7 +98,7 @@ async function findAll() {
 // Insert messages
 async function insert(umsg, bmsg) { 
 	// Connect to db + Get collection
-	const client = new MongoClient(url);
+	const client = new MongoClient(url, { useNewUrlParser: true });
 	await client.connect();
 	const db = client.db(dbName);
 	const col = db.collection('messages');
@@ -115,7 +115,7 @@ async function insert(umsg, bmsg) {
 // Remove messages
 async function remove(docs) { 
 	// Connect to db + Get collection
-	const client = new MongoClient(url);
+	const client = new MongoClient(url, { useNewUrlParser: true });
 	await client.connect();
 	const db = client.db(dbName);
 	const col = db.collection('messages');
